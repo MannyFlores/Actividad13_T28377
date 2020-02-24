@@ -1,0 +1,35 @@
+<div class="#546e7a blue-grey darken-1"><h2 class="center-align">Notas</h2></div>
+<h3 class="center-align">Agregar nueva nota</h3>
+
+<div class="row">
+  <form class="col s6">
+    <div class="row">
+      <div class="input-field col s6">
+        <textarea #header id="titulo" class="materialize-textarea"></textarea>
+        <label for="titulo">Titulo</label>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+  <form class="col s6">
+    <div class="row">
+      <div class="input-field col s6">
+        <textarea #body id="cuerpo" class="materialize-textarea"></textarea>
+        <label for="cuerpo">Cuerpo</label>
+      </div>
+    </div>
+  </form>
+</div>
+
+<button class="btn waves-effect #546e7a blue-grey darken-1" type="submit" name="action" (click)=agruegarnota(header,body)>Guardar
+</button>
+
+<h4 class="center-align">Notas almacenadas</h4>
+    <ul class="center-align collapsible popout">
+      <li *ngFor="let nota of notas">
+        <div class="collapsible-header">{{nota.eltitulo}}</div>
+        <div class="collapsible-body"><span>{{nota.elcuerpo}}</span></div>
+      </li>
+    </ul>
